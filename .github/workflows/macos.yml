@@ -1,18 +1,16 @@
-name: My First Workflow
-
-# This defines when the action will run
+name: Basic macOS Check
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
-  say-hello:
-    runs-on: ubuntu-latest
+  check-env:
+    # Use 'macos-latest' for the newest stable version (currently macOS 14/15)
+    runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Run a script
-        run: echo "The workflow is running successfully!"
+      - name: Check macOS Version
+        run: sw_vers
+      - name: List Installed Xcode Versions
+        run: ls /Applications | grep Xcode
