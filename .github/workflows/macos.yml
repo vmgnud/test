@@ -3,9 +3,9 @@ name: My First Workflow
 # This defines when the action will run
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   say-hello:
