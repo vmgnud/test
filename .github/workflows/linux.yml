@@ -1,0 +1,15 @@
+name: Linux Build
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run a shell script
+        run: |
+          echo "Current OS: $(uname -a)"
+          echo "Current User: $(whoami)"
+          ls -la
